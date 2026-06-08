@@ -28,10 +28,8 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Menyisipkan Font & Ikon Eksternal */}
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-      <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
-
+      {/* Catatan: Font & Icon dipindahkan ke app/layout.js agar global dan aman */}
+      
       {/* Style Kustom Terisolasi untuk Halaman Utama */}
       <style jsx global>{`
         body {
@@ -67,7 +65,7 @@ export default function HomePage() {
         }
       `}</style>
                
-      {/* Wadah Logo — Kamu bisa atur posisinya lewat kelas margin (m-) */}
+      {/* Wadah Logo */}
       <div className="relative z-10 flex justify-center mt-[60px] mb-[0px] ml-[0px]">
         <Image 
           src="/logo-campyuk-hitam.png" 
@@ -90,15 +88,6 @@ export default function HomePage() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#061b0e]/10 via-[#061b0e]/20 to-transparent"></div>
         </div>
-
-        {/* Tombol Lewati (Skip) di Atas
-        <div className="fixed top-0 left-0 w-full z-20 px-5 py-6 flex justify-end">
-          <Link href="/login">
-            <button className="bg-white/20 backdrop-blur-md text-white text-[14px] font-semibold px-4 py-2 rounded-full border border-white/30 hover:bg-white/30 transition-all active:scale-95">
-              Skip
-            </button>
-          </Link>
-        </div> */}
 
         {/* Konten Utama Terbawah (Slide up panel) */}
         <main className="relative z-10 flex flex-col justify-end min-h-screen">
