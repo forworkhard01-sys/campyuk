@@ -2,10 +2,13 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'; // 1. Tambah import useRouter di sini
 // IMPORT fungsi API dan konfigurasi yang sudah dipisah
 import { getJobTypes, checkUsernameAvailability, registerUser } from './actions';
 
 export default function CreateUserPage() {
+  const router = useRouter(); // 2. Inisialisasi router di dalam komponen
+  
   // 1. State Form Input
   const [formData, setFormData] = useState({
     fullName: '',
@@ -188,6 +191,10 @@ export default function CreateUserPage() {
       });
 
       alert('Akun Campyuk berhasil dibuat!');
+      
+      // 3. Setelah sukses dan user menekan OK pada alert, pindahkan halaman ke Login
+      router.push('/login');
+
     } catch (err) {
       alert(`Gagal menyimpan data: ${err.message}`);
     }
